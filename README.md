@@ -106,7 +106,5 @@ This guarantees:
 
 ## 🚦 Caching Strategy
 🔹 Feed Cache Key - feed:<cursor>:<limit>
-
 🔹 Engagement Cache Key - eng:<postId>
-
 🔹 Invalidation Rules - New post → clear feed cache - Like/comment/share → clear feed cache + engagement cache
