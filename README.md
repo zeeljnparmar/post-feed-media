@@ -206,7 +206,7 @@ This guarantees:
     - "Mirrors strategies used by Instagram / Twitter style feeds"
 ```
     
-##🧩 Assumptions
+## 🧩Assumptions
 ```
 User authentication is not implemented (mock userId used)
 Data is stored in JSON files (no database required for this task)
