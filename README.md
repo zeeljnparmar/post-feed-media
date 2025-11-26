@@ -29,6 +29,8 @@ src/
  │    └── cache.service.js
  ├── utils/
  │    ├── cursor.js
+ │    ├── dateFormatter.js
+ │    ├── error.js
  │    ├── fileMutex.js
  │    └── dateFormatter.js
 data/
@@ -214,7 +216,7 @@ This guarantees:
     - "Mirrors strategies used by Instagram / Twitter style feeds"
 ```
     
-## 🧩Assumptions
+## 🧩Assumptions (Future Scope)
 ```
 User authentication is not implemented (mock userId used)
 Data is stored in JSON files (no database required for this task)
