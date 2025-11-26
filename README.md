@@ -68,8 +68,10 @@ postman/
 - Prevents race conditions & file corruption
 
 ### ✅ Human Readable Timestamps
-Internal store:1764131678318
+```
+Internal store: 1764131678318
 Returned to user as:26-Nov-2025 06:24 PM
+```
 
 
 ---
@@ -90,11 +92,17 @@ Returned to user as:26-Nov-2025 06:24 PM
 ## 🛠️ Setup & Installation
 
 ### 1️⃣ Install Dependencies
-Run inside the project directory: npm install
+Run inside the project directory: 
+```
+npm install
+```
 
 
-### 2️⃣ Start the Server : npm run start
-Server will be available at:3000
+### 2️⃣ Start the Server :
+```
+npm run start
+```
+Server will be available at : 3000
 
 
 ---
