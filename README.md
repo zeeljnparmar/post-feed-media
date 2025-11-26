@@ -7,33 +7,36 @@ It follows clean architecture, supports cursor-based pagination, likes, comments
 
 ---
 ## 📂 Folder Structure
+
+```
 src/
-├── app.js
-├── server.js
-├── routes/
-│ └── index.js
-├── controllers/
-│ ├── post.controller.js
-│ ├── feed.controller.js
-│ └── engagement.controller.js
-├── services/
-│ ├── post.service.js
-│ ├── feed.service.js
-│ └── engagement.service.js
-├── repositories/
-│ ├── posts.repo.js
-│ └── engagement.repo.js
-├── cache/
-│ └── cache.service.js
-├── utils/
-│ ├── cursor.js
-│ ├── fileMutex.js
-│ └── dateFormatter.js
+ ├── app.js
+ ├── server.js
+ ├── routes/
+ │    └── index.js
+ ├── controllers/
+ │    ├── post.controller.js
+ │    ├── feed.controller.js
+ │    └── engagement.controller.js
+ ├── services/
+ │    ├── post.service.js
+ │    ├── feed.service.js
+ │    └── engagement.service.js
+ ├── repositories/
+ │    ├── posts.repo.js
+ │    └── engagement.repo.js
+ ├── cache/
+ │    └── cache.service.js
+ ├── utils/
+ │    ├── cursor.js
+ │    ├── fileMutex.js
+ │    └── dateFormatter.js
 data/
-├── posts.json
-└── engagement.json
+ ├── posts.json
+ └── engagement.json
 postman/
-└── PostmanCollection.json
+ └── PostmanCollection.json
+```
 
 ## 🚀 Features
 
@@ -102,12 +105,8 @@ This guarantees:
  - Works even when new posts are added
 
 ## 🚦 Caching Strategy
-🔹 Feed Cache Key
-    -  feed:<cursor>:<limit>
+🔹 Feed Cache Key - feed:<cursor>:<limit>
 
-🔹 Engagement Cache Key
-    -  eng:<postId>
+🔹 Engagement Cache Key - eng:<postId>
 
-🔹 Invalidation Rules
-    - New post → clear feed cache
-    -  Like/comment/share → clear feed cache + engagement cache
+🔹 Invalidation Rules - New post → clear feed cache - Like/comment/share → clear feed cache + engagement cache
