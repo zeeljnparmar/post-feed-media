@@ -6,12 +6,12 @@ class CacheService {
     this.store = new Map();
 
     //? track feed moment to delete on update or add
-    this.feedKeys = new Set(); 
+    this.feedKeys = new Set();
 
   }
 
   _now() { return Date.now(); }
-//? Create a key 
+  //? Create a key 
   set(key, value, ttl = 0) {
     const entry = {
       value,
@@ -20,7 +20,7 @@ class CacheService {
     };
     //? Storing Cache 
     this.store.set(key, entry);
-    
+
     //? Track feed for fast invalidation
     if (key.startsWith('feed:')) this.feedKeys.add(key);
   }
@@ -32,6 +32,7 @@ class CacheService {
 
     //? Check if key is expired
     if (e.expiresAt && e.expiresAt < this._now()) {
+      
       //? Delete if expires
       this.store.delete(key);
 
@@ -49,6 +50,7 @@ class CacheService {
     this.store.delete(key);
     if (key.startsWith('feed:')) this.feedKeys.delete(key);
   }
+
   //? Clear only keys related to feed
   clearAllFeeds() {
     for (const k of Array.from(this.feedKeys)) {
@@ -56,6 +58,7 @@ class CacheService {
       this.feedKeys.delete(k);
     }
   }
+
   //? Clearing every key
   clearAll() {
     this.store.clear();

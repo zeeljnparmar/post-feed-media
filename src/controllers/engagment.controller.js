@@ -4,13 +4,11 @@ import { validateFields } from '../utils/validation.js';
 // Handles LIKE action for a post.
 export const likePost = async (req, res) => {
   try {
-    if (!validateFields(req, res, ["postId", "userId"])) return;
 
+    if (!validateFields(req, res, ["postId", "userId"])) return;
     const { postId, userId } = req.body;
     const result = await engagementService.like(postId, userId);
-
     return res.json(result);
-
   } catch (err) {
     console.error("Error in likePost:", err);
     return res.status(500).json({ error: 'Unable to like' });
@@ -21,12 +19,9 @@ export const likePost = async (req, res) => {
 export const unlikePost = async (req, res) => {
   try {
     if (!validateFields(req, res, ["postId", "userId"])) return;
-
     const { postId, userId } = req.body;
     const result = await engagementService.unlike(postId, userId);
-
     return res.status(201).json(result);
-
   } catch (err) {
     console.error("Error in unlikePost:", err);
     return res.status(500).json({ error: 'internal_error' });

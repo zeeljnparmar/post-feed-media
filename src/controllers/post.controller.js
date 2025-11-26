@@ -4,13 +4,13 @@ import { validateFields } from '../utils/validation.js';
 export const createPost = async (req, res) => {
   try {
     // Validate input
-    if (!validateFields(req, res, ["userId", "content"])) return;
+    if (!validateFields(req, res, ["userId", "content","media"])) return;
     const { userId, content, media } = req.body;    
     const post = await postService.createPost({ userId, content, media });
     return res.status(201).json({message:"Post create",data:post});
   } catch (err) {
     console.error("Error in createPost:", err);
-    return res.status(500).json({ error: 'Error Creating Post' });
+    return res.status(400).json({ error: 'Error Creating Post' });
   }
 };
 

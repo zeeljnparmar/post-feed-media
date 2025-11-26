@@ -1,4 +1,4 @@
-exports.formatReadableTimestamp = function (timestamp) {
+export const formatReadableTimestamp = function (timestamp) {
   const date = new Date(timestamp);
 
   const day = String(date.getDate()).padStart(2, "0");
