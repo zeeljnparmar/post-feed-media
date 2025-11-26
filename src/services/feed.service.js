@@ -15,7 +15,6 @@ async function getFeed({ cursor, limit = 10 }) {
   let posts = await postsRepo.getAllPosts();
   posts.sort((a, b) => {
     if (b.timestamp !== a.timestamp) return b.timestamp - a.timestamp;
-    // deterministic fallback
     return b.id.localeCompare(a.id);
   });
 

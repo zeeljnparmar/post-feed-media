@@ -11,7 +11,7 @@ exports.validateFields = (req, res, requiredFields = []) => {
 
   if (missing.length > 0) {
     errorResponse(res, 400, "Missing required fields", { missing });
-    return false;  // 🔥 stops controller execution
+    return false;  // stops controller execution
   }
 
   return true;

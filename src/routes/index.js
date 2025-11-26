@@ -5,20 +5,14 @@ const postController = require('../controllers/post.controller.js');
 const feedController = require('../controllers/feed.controller.js');
 const engagementController = require('../controllers/engagment.controller.js');
 
-/**
- * Posts
- */
+// Routes to create and get post 
 router.post('/posts/create', postController.createPost);
 router.post('/posts/get', postController.getPostById);
 
-/**
- * Feed (cursor + limit in body)
- */
+// Route that manages feed
 router.post('/feed', feedController.getFeed);
 
-/**
- * Engagement
- */
+// Route that manages engagement
 router.post('/posts/like', engagementController.likePost);
 router.post('/posts/unlike', engagementController.unlikePost);
 router.post('/posts/comment', engagementController.commentPost);
